@@ -64,7 +64,7 @@ select * from programmer where PROF1='c' or PROF2='c'
 --19. How many Programmers know either COBOL or PASCAL. 
 select count(*) from programmer where PROF1='cobol' or PROF1='pascal' or PROF2='cobol' or PROF2='pascal'
 
---20. How many Programmers Don’t know PASCAL and C 
+--20. How many Programmers Donâ€™t know PASCAL and C 
 select count(*) from programmer where PROF1<>'c' and PROF1<>'pascal' and PROF2<>'c' and PROF2<>'pascal'
 
 --21. How old is the Oldest Male Programmer. 
@@ -85,7 +85,7 @@ FROM
 programmer
 order by PNAME desc
 
---24. Who are the Programmers who celebrate their Birthday’s During the Current Month? 
+--24. Who are the Programmers who celebrate their Birthdayâ€™s During the Current Month? 
 
 	--cuurent month = May 
 select Pname from programmer where month(dob)=5
@@ -103,7 +103,7 @@ select avg(salary) from programmer
 --28. How many people draw salary 2000 to 4000? 
 select count(*) from programmer where salary>=2000 and salary<=4000
 
---29. Display the details of those who don’t know Clipper, COBOL or PASCAL. 
+--29. Display the details of those who donâ€™t know Clipper, COBOL or PASCAL. 
 select * from programmer where PROF1 not in ('clipper', 'cobol', 'pascal') and PROF2 not in ('clipper', 'cobol', 'pascal')
 
 --30. Display the Cost of Package Developed By each Programmer. 
@@ -125,7 +125,7 @@ select developin, sum(scost) from software group by developin
 select developin, avg(dcost) AVG_DCOST, avg(scost) AVG_SCOST, avg(scost*sold) AVG_PERCOPY 
 from software group by developin 
 
---35. Display each programmer’s name, costliest and cheapest Packages Developed by him or her. 
+--35. Display each programmerâ€™s name, costliest and cheapest Packages Developed by him or her. 
 select Pname, max(dcost) MAX_DCOST, Min(dcost) MIN_DCOST 
 from software group by pname
 
@@ -381,7 +381,7 @@ from programmer
 group by month(doj)
 order by count(*) desc
 
---78. In which language are most of the programmer’s proficient. 
+--78. In which language are most of the programmerâ€™s proficient. 
 create table #profcount (prof varchar(20), pcount int)
 
 insert into #profcount
